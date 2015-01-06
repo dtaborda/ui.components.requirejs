@@ -1,0 +1,146 @@
+html, body{
+    margin:0;
+    padding:0;
+    height:100%;
+}
+
+.container-row {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+#wrapper {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin: 0 auto -4em;
+    position: relative;
+    #container{
+        padding-bottom: 4%;
+    }
+}
+
+.footer {
+    bottom:0;
+    left:0;
+    height:2%;
+    padding: 31px 0;
+    position:absolute;
+    width:100%;
+}
+
+.container-fluid > .navbar-header, .container-fluid > .navbar-collapse {
+    margin-right: 0;
+    margin-left: 0;
+}
+
+.panel .btn i,.btn span {
+    color: #666666;
+}
+
+.panel .panel-heading {
+    background-color: #ffffff;
+    font-weight: 700;
+    font-size: 16px;
+    color: #262626;
+    border-color: #ffffff;
+}
+
+.panel .panel-heading a {
+    font-weight: 400;
+    font-size: 11px;
+}
+
+.panel .panel-default {
+    border-color: #cccccc;
+}
+
+.panel .panel-thumbnail {
+    padding: 0;
+}
+
+.panel .img-circle {
+    width: 50px;
+    height: 50px;
+}
+
+/*
+  =-=-=-=
+	NAVIGATION COMPONENT
+  =-=-=-=
+*/
+.bgimage {
+    text-align:right;
+    color:white;
+    background-size:cover;
+    height: 100%;
+    background-position: center center;
+}
+
+ul[rn-carousel] {
+    min-height:400px;
+}
+
+.carousel5 li {
+    width:100%;
+    height:100%;
+    font-size:30px;
+    background-color: #ccc;
+}
+
+.carousel-demo {
+    margin-top:20px;
+    display:inline-block;
+    text-align: center;
+}
+.carousel-demo-fullscreen {
+  width:100%;
+  height:100%;
+}
+.carousel-demo-fullscreen ul[rn-carousel] {
+  width:100%;
+  height:100%;
+}
+
+input.tiny {
+    width:50px;
+    text-align:center;
+}
+
+.carousel-demo ul[rn-carousel-transition="hexagon"] {
+  margin-left:100px;
+}
+
+.custom-indicator{
+    padding-top: 10px;
+}
+
+.custom-indicator span {
+  transition: all 0.3s ease-in;
+}
+.custom-indicator img.active {
+  border: 2px solid #00B7D7;
+}
+/*
+  =-=-=-=
+	NAVIGATION COMPONENT
+  =-=-=-=
+*/
+/*
+  =-=-=-=
+	NAVIGATION COMPONENT
+  =-=-=-=
+*/
+
+.entry-header{
+    font-size: 1.1em;
+    margin: 0;
+    height: 50px;
+    padding-top: 10px;
+    padding-left: 60px;
+}
+/*
+  =-=-=-=
+	NAVIGATION COMPONENT
+  =-=-=-=
+*/
