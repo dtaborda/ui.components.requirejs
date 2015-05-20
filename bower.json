@@ -1,5 +1,5 @@
 {
-  "name": "BR",
+  "name": "Despegar",
   "version": "0.0.0",
   "authors": [
     "Damian Taborda <damian.taborda@gmail.com>"
@@ -7,7 +7,7 @@
   "moduleType": [
     "amd"
   ],
-  "license": "BR",
+  "license": "Damian",
   "private": true,
   "ignore": [
     "**/.*",
@@ -18,14 +18,12 @@
     "tests"
   ],
   "dependencies": {
-    "require": "*"
+    "require": "*",
+    "flag-css": "~0.0.1"
   },
   "devDependencies": {
-    "angular-touch": ">=1.2.10",
     "angular-ui-router": "~0.2.11",
     "angular-resource": "~1.3.2",
-    "angular-youtube-mb": "~0.1.6",
-    "angular-carousel": "~0.3.7",
     "angular-mocks": ">=1.2.10",
     "requirejs": "~2.1.15",
     "bootstrap-sass": "~3.0.2",

@@ -3,7 +3,9 @@ define('about.controller', ['angular'],
 		'use strict';
 
 		angular.module('aboutControllerModule',[])
-			.controller('aboutController',['$scope', function(scope){
+			.controller('aboutController',[
+                '$scope',
+                function(scope){
 
 				}
 			]);

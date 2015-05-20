@@ -1,0 +1,18 @@
+.hotel-star-list {
+    & {
+        list-style: none;
+    }
+
+    li {
+        margin-bottom: 0.5em;
+    }
+
+    li: last-chile {
+        margin-bottom: 0;
+    }
+
+    .star-list {
+        color: #c9b467;
+        float: right;
+    }
+}

@@ -6,13 +6,23 @@ $bold: 600;
 // Base Font
 $base-font-family: sans-serif;
 $base-font-weight: $regular;
-$base-font-size: 13px;
+$base-font-size: 14px !default;;
 $base-line-height: 1.4;
+
+
 
 // Fixed Font
 $fixed-font-family: monospace;
 $fixed-font-size: 85%;
 $fixed-line-height: $base-line-height;
+
+$h1-font-size:            floor($base-font-size * 2.15) !default; // ~36px
+$h2-font-size:            floor($base-font-size * 1.7) !default; // ~30px
+$h3-font-size:            ceil($base-font-size * 1.25) !default; // ~24px
+$h4-font-size:            $base-font-size !default;
+$h5-font-size:            $base-font-size !default;
+$h6-font-size:            ceil($base-font-size * 0.85) !default; // ~12px
+
 
 // Headings
 $header-font-weight: $bold;

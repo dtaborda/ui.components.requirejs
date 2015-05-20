@@ -1,6 +1,6 @@
 {
   "name": "require.js",
-  "version": "0.3.93",
+  "version": "0.3.97",
   "description": "node.js require loader/compiler for the browser and node.js",
   "repository": {
     "type": "git",

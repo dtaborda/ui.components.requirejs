@@ -7,51 +7,43 @@
 			'app':'app/app',
 			'configuration':'app/config/main.config',
 			'angular':'vendor/angular/angular',
-			'angularRouter':'vendor/angular-ui-router/release/angular-ui-router.min',
-			'angularResource':'vendor/angular-resource/angular-resource.min',
-			'angularTouch':'vendor/angular-touch/angular-touch',
-			'angularCarousel':'vendor/angular-carousel/dist/angular-carousel',
-			'angularYoutube':'vendor/angular-youtube-mb/dist/angular-youtube-embed.min',
+			'angular-router':'vendor/angular-ui-router/release/angular-ui-router.min',
+			'angular-resource':'vendor/angular-resource/angular-resource.min',
 			'jquery':'vendor/jquery/dist/jquery.min',
-			'dashboard.route':'app/routes/dashboard/dashboard.route',
 			'about.route':'app/routes/about/about.route',
-			'login.route':'app/routes/login/login.route',
-			'dashboard.controller':'app/routes/dashboard/dashboard.controller',
 			'about.controller':'app/routes/about/about.controller',
-			'login.controller':'app/routes/login/login.controller',
-			'dashboard.service':'app/services/dashboard/dashboard',
-			'nav-menu.component':'app/components/nav/nav-menu.component',
-			'entry.component':'app/components/entry/entry.component',
-			'wall.component':'app/components/wall/wall.component',
-			'partition.filter':'app/filters/partition.filter',
-			'carousel.component':'app/components/carousel/carousel.component'
+			'hotels.route':'app/routes/hotels/hotels.route',
+			'hotels.controller':'app/routes/hotels/hotels.controller',
+			'hotels.service':'app/services/hotels/hotels',
+			'message.service':'app/services/messages/message',
+			'banner-hotel.component': 'app/components/banner-hotel/banner-hotel.component',
+			'breadcrumbs.component': 'app/components/breadcrumbs/breadcrumbs.component',
+			'comment-card.component': 'app/components/comment-card/comment-card.component',
+			'comments-list.component': 'app/components/comments-list/comments-list.component',
+			'hotel-card.component': 'app/components/hotel-card/hotel-card.component',
+			'hotels-list.component': 'app/components/hotels-list/hotels-list.component',
+			'nav-menu.component': 'app/components/nav/nav-menu.component',
+			'map.component': 'app/components/map/map.component',
+			'featured-hotels.component': 'app/components/featured-hotels/featured-hotels.component',
+			'stars-hotels.component': 'app/components/stars-hotels/stars-hotels.component',
+			'search-hotel-form.component': 'app/components/search-hotel-form/search-hotel-form.component'
 		},
 		shim:{
 			'angular':{
 				exports: 'angular',
 				deps:['jquery']
 			},
-			'angularRouter':{
+			'angular-router':{
 				deps:['angular']
 			},
-			'angularResource':{
-				deps:['angular']
-			},
-			'angularCarousel':{
-				deps:['angular']
-			},
-			'angularTouch':{
-				deps:['angular']
-			},
-			'angularYoutube':{
+			'angular-resource':{
 				deps:['angular']
 			}
 		}
 	});
 
-	require(['app', 'configuration','angularCarousel'],
-		function(app, config, angularCarousel){
-
+	require(['app', 'configuration'],
+		function(app, config){
 			angular.element(document).ready(function() {
 			  	angular.bootstrap(document.querySelector('html'), [
 			    	config.applicationName
@@ -59,6 +51,5 @@
 			    	strictDi: true
 			  	});
 			});
-
 	});
 })();

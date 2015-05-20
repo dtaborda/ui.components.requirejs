@@ -1,0 +1,10 @@
+#search-hotel-form{
+    &.well-yellow {
+        background-color: yellow;
+        border-color: yellow;
+        border-radius: 20px;
+    }
+    .form-group: last-child{
+        margin-bottom: 0
+    }
+}

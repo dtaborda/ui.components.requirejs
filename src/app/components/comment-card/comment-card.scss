@@ -1,0 +1,81 @@
+.comment-content {
+    & {
+        min-height: 160px;
+    }
+
+    .comment-bubble {
+        & {
+            display: inline-block;
+            padding: 14px 0;
+            position: relative;
+        }
+
+        .comment-arrow {
+            bottom: 0;
+            left: 2em;
+            border-width: 15px 15px 0;
+            border-top-color: #63b7e0;
+        }
+
+        .comment-message {
+            background-color: #f0f5fc;
+            border: 1px solid #63b7e0;
+            border-radius: 1em;
+            padding: 1em;
+        }
+    }
+
+    .comment-description {
+        &{
+            height: 80px;
+            margin-bottom: 1em;
+            position: relative;
+        }
+
+        .comment-flag-section {
+            & {
+                float: left;
+                width: 100px;
+            }
+
+            .user-icon {
+                & {
+                    margin-left: 1.4em;
+                    margin-top: 0.5em;
+                }
+                span {
+                    font-size: 3em;
+                }
+            }
+
+            .flag {
+                margin-left: 2.2em;
+            }
+        }
+
+        .comment-info {
+            & {
+                left: 100px;
+                position: absolute;
+                top: 0;
+            }
+
+            h3 {
+                margin-top: 0;
+                margin-bottom: 0;
+            }
+
+            p {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    .comment-arrow {
+        position: absolute;
+        width: 0;
+        height: 0;
+        border-color: transparent;
+        border-style: solid;
+    }
+}

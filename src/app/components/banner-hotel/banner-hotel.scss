@@ -1,0 +1,25 @@
+.figure-banner-hotel{
+    & {
+        border-radius: 20px;
+        height: 427px;
+        margin-bottom: 20px;
+        overflow: hidden;
+        padding-bottom: 30%;
+        position: relative;
+    }
+
+    .figcaption{
+        & {
+            background-color: #000;
+            opacity: 0.5;
+            padding-bottom: 10%;
+            position: absolute;
+            top: 30%;
+            width: 100%;
+        }
+        h2, p {
+            color: #FFF;
+            opacity: 1;
+        }
+    }
+}

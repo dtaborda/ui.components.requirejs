@@ -30,9 +30,8 @@ define('nav-menu.component',['angular'],
 
 								function init(){
 									ctrl.items = [
-										{ title: 'Dashboard', icon: 'flaticon-dwelling1', state:'dashboard'  },
-										{ title: 'About', icon: 'flaticon-menu45', state:'about'  },
-										{ title: 'Login', icon: 'flaticon-menu45', state:'login'  }
+										{ title: 'Hoteles', icon: 'flaticon-dwelling1', state:'hotels'  },
+										{ title: 'About', icon: 'flaticon-menu45', state:'about'  }
 									];
 								}
 

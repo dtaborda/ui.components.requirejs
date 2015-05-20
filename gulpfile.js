@@ -1,5 +1,6 @@
 var gulp = require('gulp'),
 	jsonConfig = require('./package.json'),
+	proxyConfig = require('./proxy.json'),
 	Multistream = require('multistream'),
 	jshint = require('gulp-jshint'),
 	uglify = require('gulp-uglify'),
@@ -16,23 +17,15 @@ var gulp = require('gulp'),
     cache = require('gulp-cache'),
     rev = require('gulp-rev'), // add revision hash to file names
     revReplace = require('gulp-rev-replace'),
+    replace = require('gulp-replace-task'),
     useref = require('gulp-useref'),
+    zip = require('gulp-zip'),
 	paths = {
 		src:'src/',
 		dest:'dest/',
 		noVendor:'!src/{vendor,vendor/**}',
 		bootstrap: 'src/vendor/bootstrap-sass/'
 	};
-
-// js: jshint + concat + uglify (banner) =>  sourcemaps
-// css: sass + minify
-// dev: browser livereload
-// html min
-// clean
-// img optim
-
-// assets tasks
-// source maps
 
 gulp.task('scripts', function(filesPath){
 	return gulp.src([paths.src +  '**/*.js', paths.noVendor])
@@ -131,6 +124,7 @@ gulp.task('jshint', function(){
 gulp.task('browser-sync-build', function() {
     browserSync({
         server: {
+        	proxy: proxyConfig.tpUrl,
             baseDir: paths.dest
         }
     });
@@ -139,6 +133,17 @@ gulp.task('browser-sync-build', function() {
 gulp.task('browser-sync-dev', function() {
     browserSync({
         server: {
+        	proxy: proxyConfig.tpUrl,
+            baseDir: paths.src
+        }
+    });
+});
+
+gulp.task('browser-sync-proxy', function() {
+    browserSync({
+        server: {
+			middleware: [middlewareInterceptorLegacy],
+        	proxy: proxyConfig.tpUrl,
             baseDir: paths.src
         }
     });
@@ -172,7 +177,6 @@ gulp.task('watch', function(){
 	gulp.watch(paths.src + 'images/**/*', ['images']);
 	gulp.watch(paths.src + '**/*.html', ['html']);
 
-
 	// Watching changed files
 	gulp.watch([paths.dest + 'styles/**/*.min.css',
 			paths.dest + 'scripts/**/*.js',
@@ -203,3 +207,32 @@ gulp.task('dev',function(){
 		paths.src + '**/*.html',
 		paths.src + 'images/**/*'], ['reload']);
 });
+
+// proxy tasks
+gulp.task('proxy', function(){
+	gulp.start('proxy');
+});
+
+gulp.task('proxy',function(){
+	gulp.start('browser-sync-proxy');
+	gulp.watch([paths.src + 'styles/**/*.scss', paths.src + 'app/**/*.scss'], ['styles']);
+	gulp.watch(paths.src + 'app/**/*.js', ['jshint','reload']);
+
+	gulp.watch([paths.dest + 'styles/**/*.css',
+		paths.src + '**/*.html',
+		paths.src + 'images/**/*'], ['reload']);
+});
+
+var url = require('url');
+var proxy = require('proxy-middleware');
+var proxyLegacyOptions = url.parse(proxyConfig[proxyConfig.url]);
+proxyLegacyOptions.route = '/api'
+var legacyProxy = proxy(proxyLegacyOptions);
+
+var middlewareInterceptorLegacy =  function (req, res, next) {
+
+	if (req.url.slice(0, proxyLegacyOptions.route.length) === '/api') {
+		console.log("[Despegar Service proxy (" + new Date() + ")]: request received: Redirecting to: " + req.url);
+	}
+	legacyProxy(req, res, next);
+}

@@ -1,65 +1,7 @@
+@import "partials/base";
+
 html, body{
     margin:0;
     padding:0;
     height:100%;
-}
-
-.container-row {
-  margin-left: 0;
-  margin-right: 0;
-}
-
-#wrapper {
-    min-height: 100%;
-    height: auto !important;
-    height: 100%;
-    margin: 0 auto -4em;
-    position: relative;
-    #container{
-        padding-bottom: 4%;
-    }
-}
-
-.footer {
-    bottom:0;
-    left:0;
-    height:2%;
-    padding: 31px 0;
-    position:absolute;
-    width:100%;
-}
-
-.container-fluid > .navbar-header, .container-fluid > .navbar-collapse {
-    margin-right: 0;
-    margin-left: 0;
-}
-
-.panel .btn i,.btn span {
-    color: #666666;
-}
-
-.panel .panel-heading {
-    background-color: #ffffff;
-    font-weight: 700;
-    font-size: 16px;
-    color: #262626;
-    border-color: #ffffff;
-}
-
-.panel .panel-heading a {
-    font-weight: 400;
-    font-size: 11px;
-}
-
-.panel .panel-default {
-    border-color: #cccccc;
-}
-
-.panel .panel-thumbnail {
-    padding: 0;
-}
-
-.panel .img-circle {
-    width: 50px;
-    height: 50px;
 }

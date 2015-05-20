@@ -1,40 +1,23 @@
 define('app', [
 		'angular',
-		'angularRouter',
 		'configuration',
-		'angularTouch',
-		'angularCarousel',
-		'angularYoutube',
-		'dashboard.route',
+		'angular-router',
 		'about.route',
-		'login.route',
-		'dashboard.controller',
-		'dashboard.service',
+		'hotels.route',
 		'about.controller',
-		'login.controller',
-		'nav-menu.component',
-		'entry.component',
-		'wall.component',
-		'partition.filter',
-		'carousel.component'
+		'hotels.controller',
+		'breadcrumbs.component',
+		'nav-menu.component'
 	],
-	function(ng, angularRouter, config,angularTouch, angularCarousel, angularYoutube,dashboardRoute, aboutRoute, loginRoute){
+	function(ng, config, angularRouter, aboutRoute, hotelsRoute){
 		'use strict';
 
 		angular.module(config.applicationName,[
 				'ui.router',
-				'ngTouch',
-				'angular-carousel',
-				'youtube-embed',
-				'dashboardControllerModule',
 				'aboutControllerModule',
-				'loginControllerModule',
-				'dashboardServiceModule',
-				'navMenuComponentModule',
-				'entryComponentModule',
-				'wallComponentModule',
-				'partitionFilterModule',
-				'carouselComponentModule'
+				'hotelsControllerModule',
+				'breadcrumbsComponentModule',
+				'navMenuComponentModule'
 			])
 			.run([
 				'$rootScope',
@@ -47,12 +30,10 @@ define('app', [
 				'$stateProvider',
 				'$urlRouterProvider',
 				'$httpProvider',
-		        function ($stateProvider,$urlRouterProvider,$httpProvider) {
-		        	$httpProvider.defaults.withCredentials = true;
+		        function ($stateProvider,$urlRouterProvider) {
 		            $urlRouterProvider.otherwise('/');
-		            dashboardRoute($stateProvider);
 		            aboutRoute($stateProvider);
-		            loginRoute($stateProvider);
+		            hotelsRoute($stateProvider);
 		        }
 		    ]);
 	}
