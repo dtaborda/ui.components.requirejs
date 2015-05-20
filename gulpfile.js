@@ -124,6 +124,7 @@ gulp.task('jshint', function(){
 gulp.task('browser-sync-build', function() {
     browserSync({
         server: {
+        	middleware: [middlewareInterceptorLegacy],
         	proxy: proxyConfig.tpUrl,
             baseDir: paths.dest
         }
@@ -185,12 +186,12 @@ gulp.task('watch', function(){
 });
 
 // console tasks
-gulp.task('default', function(){
+/*gulp.task('default', function(){
 	gulp.start('dev');
-});
+});*/
 
 gulp.task('build',['clean'], function(){
-	gulp.start('scripts', 'styles', 'html', 'copy-imgs','copy-vendor')
+	gulp.start('scripts', 'styles', 'html')
 });
 
 gulp.task('dev-build',['scripts', 'styles', 'html', 'copy-imgs','copy-vendor'],function(){
@@ -206,6 +207,10 @@ gulp.task('dev',function(){
 	gulp.watch([paths.dest + 'styles/**/*.css',
 		paths.src + '**/*.html',
 		paths.src + 'images/**/*'], ['reload']);
+});
+
+gulp.task('default', function(){
+	gulp.start('browser-sync-build');
 });
 
 // proxy tasks

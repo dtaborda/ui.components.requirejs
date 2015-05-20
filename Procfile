@@ -1,1 +1,1 @@
-web: gulp proxy
+web: gulp
