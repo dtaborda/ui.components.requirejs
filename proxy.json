@@ -1,6 +1,6 @@
-{ "url" : "local",
+{ "url" : "desa",
   "local":"http://localhost:1337",
-  "desa": "http://localhost:1337",
+  "desa": "http://api-take-off.herokuapp.com/",
   "test": "http://localhost:1337",
   "uat":  "http://localhost:1337",
   "prod": "http://localhost:1337"
