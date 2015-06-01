@@ -1,4 +1,4 @@
-// Compiled with Require.js on Mon Nov 10 2014 13:38:27 GMT-0600 (CST)
+// Compiled with Require.js on Tue Dec 16 2014 18:10:12 GMT-0600 (CST)
 
 (function(main, modules, paths, Buffer, process, __require__, global) {
     var isCommonJS = typeof(module) !== "undefined" && module.exports,
@@ -259,7 +259,7 @@
                 var urlPath = require("url_path");
 
 
-                var hasExtension = /\.[\w]+$/,
+                var hasExtension = /\.(js|json)$/,
                     MODULE_SPLITER = /([^/]*)(\/.*)?/,
                     SPLITER = /[\/]+/,
                     FUNC_REPLACER = /[\.\/\-\@]/g,
@@ -541,7 +541,7 @@
                         }
 
                         MODULE_PATH = urlPath.dir(resolved);
-                        if (pkg) resolved = urlPath.join(MODULE_PATH, pkg.main || pkg.browser || ".");
+                        if (pkg) resolved = urlPath.join(MODULE_PATH, parseMain(pkg));
 
                         if (relativePath) {
                             resolved = urlPath.join(urlPath.dir(resolved), relativePath);
@@ -560,10 +560,18 @@
                     return resolved;
                 }
 
+                function parseMain(pkg) {
+                    return (
+                        isString(pkg.main) ? pkg.main : (
+                            isString(pkg.browser) ? pkg.browser : "index"
+                        )
+                    );
+                }
+
                 function runInContext(content, context) {
                     eval(
-                        '(function ' + ((context.__filename || ".").replace(FUNC_REPLACER, "_")) + '(' + objectKeys(context).join(", ") + ') {\n' +
                         '//# sourceURL=' + context.__filename + '\n' +
+                        '(function ' + ((context.__filename || ".").replace(FUNC_REPLACER, "_")) + '(' + objectKeys(context).join(", ") + ') {\n' +
                         content + '\n' +
                         '}).call(context.exports, ' + arrayMap(objectKeys(context), function(value) {
                             return 'context.' + value;

@@ -7,51 +7,43 @@
 			'app':'app/app',
 			'configuration':'app/config/main.config',
 			'angular':'vendor/angular/angular',
-			'angularRouter':'vendor/angular-ui-router/release/angular-ui-router.min',
-			'angularResource':'vendor/angular-resource/angular-resource.min',
-			'angularTouch':'vendor/angular-touch/angular-touch',
-			'angularCarousel':'vendor/angular-carousel/dist/angular-carousel',
-			'angularYoutube':'vendor/angular-youtube-mb/dist/angular-youtube-embed.min',
+			'angular-router':'vendor/angular-ui-router/release/angular-ui-router.min',
+			'angular-aria':'vendor/angular-aria/angular-aria',
+			'angular-animate':'vendor/angular-animate/angular-animate',
+			'angular-material':'vendor/angular-material/angular-material',
 			'jquery':'vendor/jquery/dist/jquery.min',
-			'dashboard.route':'app/routes/dashboard/dashboard.route',
 			'about.route':'app/routes/about/about.route',
-			'login.route':'app/routes/login/login.route',
-			'dashboard.controller':'app/routes/dashboard/dashboard.controller',
 			'about.controller':'app/routes/about/about.controller',
+			'home.route':'app/routes/home/home.route',
+			'home.controller':'app/routes/home/home.controller',
+			'login.route':'app/routes/login/login.route',
 			'login.controller':'app/routes/login/login.controller',
-			'dashboard.service':'app/services/dashboard/dashboard',
-			'nav-menu.component':'app/components/nav/nav-menu.component',
-			'entry.component':'app/components/entry/entry.component',
-			'wall.component':'app/components/wall/wall.component',
-			'partition.filter':'app/filters/partition.filter',
-			'carousel.component':'app/components/carousel/carousel.component'
+			'nav-menu.component': 'app/components/nav-menu/nav-menu.component',
+			'side-nav-menu.component': 'app/components/side-nav-menu/side-nav-menu.component',
+			'component.component': 'app/components/component/component.component'
 		},
 		shim:{
 			'angular':{
 				exports: 'angular',
 				deps:['jquery']
 			},
-			'angularRouter':{
+			'angular-aria':{
 				deps:['angular']
 			},
-			'angularResource':{
+			'angular-animate':{
 				deps:['angular']
 			},
-			'angularCarousel':{
-				deps:['angular']
+			'angular-material':{
+				deps:['angular', 'angular-aria', 'angular-animate']
 			},
-			'angularTouch':{
-				deps:['angular']
-			},
-			'angularYoutube':{
+			'angular-router':{
 				deps:['angular']
 			}
 		}
 	});
 
-	require(['app', 'configuration','angularCarousel'],
-		function(app, config, angularCarousel){
-
+	require(['app', 'configuration'],
+		function(app, config){
 			angular.element(document).ready(function() {
 			  	angular.bootstrap(document.querySelector('html'), [
 			    	config.applicationName
@@ -59,6 +51,5 @@
 			    	strictDi: true
 			  	});
 			});
-
 	});
 })();
