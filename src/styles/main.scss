@@ -1,7 +1,176 @@
-@import "partials/base";
+/************Variables***********/
+$black: #000;
+$gray: #7f7f7f;
+$gray-light: #333;
+/***********End Variable*********/
 
-html, body{
-    margin:0;
-    padding:0;
-    height:100%;
+/************Reset**************/
+html, body, div, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, ol, ul, li, form, fieldset, legend, label, table, header, footer, nav, section {
+    margin: 0;
+    padding: 0;
+    border: 0;
 }
+ol, ul {
+    list-style: none;
+}
+header, footer, nav, section, article, hgroup, figure {
+    display: block;
+}
+legend {
+    display: none;
+}
+
+img, embed, object, video {
+    max-width: 100%;
+}
+/************End Reset**************/
+
+/************Global****************/
+body, html{
+    height: 100%;
+    width: 100%;
+}
+body{
+    font: 100%/1.5 'Gill Sans', 'Droid Sans', 'Calibri', 'Lucida Grande', 'Trebuchet MS', 'Helvetica Neue', 'Arial', sans-serif;
+    color: #000;
+    background-color: gray;
+}
+
+a {
+    text-decoration: none;
+    color: $gray;
+}
+/************End Global************/
+
+.header{
+    &{
+        background-color: $black;
+        height: 4.5em;
+        margin-right: auto;
+        margin-left: auto;
+        position: relative;
+        width: 100%;
+    }
+    .header__inner{
+        &{
+            text-align: justify;
+        }
+
+        &::after {
+            content: ' ';
+            display: inline-block;
+            width: 100%;
+        }
+
+        .header__tile, .header__nav-anchors{
+            display: inline-block;
+            vertical-align: middle;
+            text-align: left;
+        }
+
+        .header__tile{
+            &{
+                padding-left: 1em;
+            }
+            .header__logo{
+                width: 100px;
+                height: 19px;
+            }
+        }
+
+        .header__nav-anchors{
+            li{
+                &{
+                    display: inline-block;
+                }
+                a{
+                    display: block;
+                    padding: 1.5em;
+                    border-left: 1px solid $gray-light;
+                }
+            }
+        }
+
+        .nav{
+            &{
+                display: none;
+                border-top: 1px solid $gray-light;
+                position: absolute;
+                top: 100%;
+                background-color: $black;
+                width: 100%;
+            }
+            li{
+                &{
+                    background-color: $black;
+                }
+                a{
+                    background-color: $black;
+                    border-bottom: 1px solid $gray-light;
+                    display: block;
+                    padding: 1.5em;
+                }
+                a:hover{
+                    background-color: #FFF;
+                }
+            }
+        }
+    }
+}
+
+/*
+header[role="banner"]{
+    &{
+        background-color: $black;
+        height: 2em;
+        padding: 1em;
+        position: relative;
+        text-align: left;
+        width: 100%;
+    }
+
+    h1{
+        position: absolute;
+        top:50%;
+        transform: translate(0, -50%);
+    }
+
+    ul.nav-anchors{
+        &{
+            float: right;
+            margin-right: 1em;
+        }
+
+        li{
+            &{
+                display: inline-block;
+            }
+            a{
+                padding: 0.8em;
+                border-left: 1px solid #333;
+            }
+        }
+    }
+}
+
+.content {
+    &{
+        position: relative;
+        text-align: left;
+        overflow: hidden;
+    }
+    section{
+        &{
+
+        }
+        header{
+
+        }
+        figure{
+            margin: 1em;
+            padding: 1em;
+            border-radius: 1em;
+        }
+    }
+}
+*/

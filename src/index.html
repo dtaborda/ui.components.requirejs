@@ -1,27 +1,181 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<html lang="en"><head>
 	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title data-ng-bind="state.current.title"></title>
-	<link rel="stylesheet" href="vendor/bootstrap-sass/dist/css/bootstrap.css">
-	<link rel="stylesheet" href="vendor/flag-css/dist/flag-css.css">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Document</title>
 	<!-- build:css ../dest/styles/main.css -->
 	<link rel="stylesheet" href="styles/main.css">
 	<!-- endbuild -->
 </head>
 <body>
-	<nav-menu></nav-menu>
-	<div class="container-fluid">
-		<breadcrumbs></breadcrumbs>
-		<section data-ui-view=""></section>
+	<header role="banner" class="header">
+		<div class="header__inner">
+			<h1 class="header__tile">
+				<a href="views/#">
+					<img class="header__logo" src="images/logo_new.png" alt="Ffly">
+				</a>
+			</h1>
+
+			<ul class="header__nav-anchors">
+				<li><a href="#">Menu</a></li>
+				<li><a href="#">Search</a></li>
+			</ul>
+
+			<nav class="nav">
+                <ul role="navigation">
+                    <li><a href="#">T-shirts</a></li>
+                    <li><a href="#">Hoodies</a></li>
+                    <li><a href="#">Pants</a></li>
+                </ul>
+            </nav>
+		</div>
+	</header>
+
+	<nav></nav>
+
+	<div class="content">
+		<section class="img-1">
+			<header>
+				<h2>Image 1</h2>
+			</header>
+			<figure>
+				<img class="img-responsive" src="images/product_img_1.jpg">
+				<figcaption>
+					<ul>
+						<li>
+							<img src="">
+						</li>
+					</ul>
+				</figcaption>
+			</figure>
+		</section>
+		<section class="img-2">
+			<header>
+				<h2>Image 2</h2>
+			</header>
+			<img src="images/product_img_1.jpg">
+		</section>
+		<section class="img-3">
+			<header>
+				<h2>Image 3</h2>
+			</header>
+			<img src="images/product_img_1.jpg">
+		</section>
 	</div>
-	<footer class="footer">
-    	<p><span class="glyphicon glyphicon-heart"></span> from the Yeoman team</p>
-  	</footer>
+
+	<!--header role="banner">
+    	<div>
+            <h1 class="logo"><a href="views/#"><img src="images/logo_new.png" alt="Ffly"></a></h1>
+            <ul id="nav-anchors" class="nav-anchors">
+            	<li><a href="views/#nav" id="menu-anchor">Menu</a></li>
+            	<li><a href="views/#search" id="search-anchor">Search</a></li>
+            </ul>
+            <form id="search" action="views/#" method="post" class="search reveal" style="">
+                <fieldset>
+                    <legend>Search the Site</legend>
+                    <label for="search-site">Search the site</label>
+                    <input type="search" id="search-site" placeholder="Search Store">
+                    <input type="submit" value="Search">
+                </fieldset>
+            </form>
+            <nav id="nav" class="nav reveal" style="">
+                <ul role="navigation">
+                    <li><a href="views/#">T-shirts</a></li>
+                    <li><a href="views/#">Hoodies</a></li>
+                    <li><a href="views/#">Pants</a></li>
+                </ul>
+            </nav>
+        </div>
+	</header>
+	<div class="content product-info" role="main">
+	<section class="product-main">
+        	<header>
+				<h1 class="product-name">Super Ffly T-shirt</h1>
+                <div class="product-overview">
+                	<strong class="price">$23</strong>
+                	<ol class="star">
+                    	<li class="on">★</li>
+                        <li class="on">★</li>
+                        <li class="on">★</li>
+                        <li class="on">★</li>
+                        <li>☆</li>
+                    </ol>
+                    <a href="views/#reviews" class="review-count">8 Reviews</a>
+                </div>
+
+			</header>
+			<div id="product-img" class="product-img">
+                <figure class="img-container" id="img-container">
+                	<div id="img-list" class="loading">
+	                	<ul>
+	                		<li data-imgsrc="images/product_img_1.jpg" style="display: list-item;">
+	                			<img src="images/product_img_1.jpg">
+	                		</li>
+
+	                		<li data-imgsrc="images/product_img_2.jpg" style="display: none;"></li>
+
+	                		<li data-imgsrc="images/product_img_3.png" style="display: none;"></li>
+	                	</ul>
+                	</div>
+                </figure>
+
+				<nav>
+					<ul>
+						<li class="active"><a href="images/product_img_1.jpg"><img src="images/product_img_1_thumb.jpg" alt="Super Ffly Men's Shirt"></a></li>
+						<li><a href="views/images/product_img_2.jpg"><img src="images/product_img_2_thumb.jpg" alt="Super Ffly Women's Shirt"></a></li>
+						<li><a href="views/images/product_img_3.png"><img src="images/product_img_3_thumb.jpg" alt="Ffly Logo"></a></li>
+					</ul>
+				</nav>
+			</div><!--end .product-img-->
+            <!--form method="post" action="views/#" id="product-form" class="product-form">
+                <fieldset>
+                    <legend>Add to Cart</legend>
+                    <div class="field qty-field">
+                        <label for="qty">Qty</label>
+                        <input name="qty" id="qty" class="qty" type="number" pattern="[0-9]*" value="1" min="1" max="999">
+                    </div>
+                    <div class="field size-field">
+                        <label for="size">Size</label>
+                        <select id="size" name="size">
+                            <option value="S">S</option>
+                            <option value="S">M</option>
+                            <option value="S">L</option>
+                            <option value="S">XL</option>
+                        </select>
+                    </div>
+                    <div class="submit-form">
+                        <input type="submit" class="btn" value="Add to Cart">
+                    </div>
+                </fieldset>
+            </form><!--end #product-form-->
+            <!--div class="product-utils">
+            	<a href="views/#" class="share-btn">Share</a>
+            	<a href="views/#" class="find-nearby">Find Nearby</a>
+            </div>
+            <div class="product-description">
+                <div id="p-desc">
+                	<p>Behold, your new favorite shirt! This built-to-last tee adapts to your size and capabilities, starting off XS then stretches and scales to keep you comfortable as you grow taller and wider. The future is here, so look sharp.</p>
+                </div>
+            </div><!--end .product-description-->
+		</section><!--end .product-main-->
+	</div><!--end .content-->
+	<!--footer class="footer">
+		<div>
+            <nav class="nav" role="navigation">
+                <ul class="footer-nav">
+                    <li><a href="views/#">T-shirts</a></li>
+                    <li><a href="views/#">Hoodies</a></li>
+                    <li><a href="views/#">Pants</a></li>
+                </ul>
+            </nav>
+            <ul class="service-links">
+                <li class="tel"><a href="tel:+1-800-275-2273" title="Call our customer Service">Call 800-888-8888</a></li>
+                <li><a href="views/#">About</a></li>
+                <li><a href="views/#page" class="top">Back to Top</a></li>
+            </ul>
+        </div>
+	</footer--><!--end .footer-->
+
 	<!-- build:js ../dest/scripts/main.js -->
 	<script src="vendor/requirejs/require.js" data-main="app/main.js" type="text/javascript"></script>
 	<!-- endbuild -->
-</body>
-</html>
+</body></html>

@@ -13,13 +13,12 @@ define('hotel-card.component',['angular'],
 						},
 						controllerAs:'hotelCardCtrl',
 						templateUrl: 'app/components/hotel-card/hotel-card.template.html',
-						controller:['$scope',function(scope){
+						bindToController: true,
+						controller:[function(){
 							var self = this;
 
-							self.hotel = {};
-
 							function init(){
-								self.hotel = scope.hotel;
+
 							};
 
 							init();

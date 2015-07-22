@@ -7,7 +7,7 @@ define('configuration', [],
 			{ title: 'Ayuda', icon: 'flaticon-concentric', state:'about'  }
 		];
 
-		var host = 'http://localhost:3000/api';
+		var host = 'http://localhost:5000/api';
 
 		return {
 			applicationName: 'app',
