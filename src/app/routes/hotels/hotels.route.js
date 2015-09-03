@@ -5,7 +5,7 @@ define('hotels.route',['hotels.controller'],
 		return function ($stateProvider) {
 			$stateProvider
 				.state('hotels',{
-					url:'/',
+					url:'/hotels',
 					templateUrl:'app/routes/hotels/hotels.template.html',
 					controller:'hotelsController as hotelsCtrl',
 					title:'Hoteles'

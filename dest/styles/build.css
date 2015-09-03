@@ -289,6 +289,36 @@ html, body {
   height: 100%;
 }
 
+/*
+  =-=-=-=
+	NAVIGATION COMPONENT
+  =-=-=-=
+*/
+#search-hotel-form {
+  .form-group: last-child;
+  .form-group-margin-bottom: 0;
+}
+#search-hotel-form.well-yellow {
+  background-color: yellow;
+  border-color: yellow;
+  border-radius: 20px;
+}
+
+.hotel-star-list {
+  li: last-chile;
+  li-margin-bottom: 0;
+}
+.hotel-star-list {
+  list-style: none;
+}
+.hotel-star-list li {
+  margin-bottom: 0.5em;
+}
+.hotel-star-list .star-list {
+  color: #c9b467;
+  float: right;
+}
+
 .figure-banner-hotel {
   border-radius: 20px;
   height: 427px;
@@ -369,6 +399,11 @@ html, body {
   border-style: solid;
 }
 
+/*
+  =-=-=-=
+	NAVIGATION COMPONENT
+  =-=-=-=
+*/
 /*
   =-=-=-=
 	NAVIGATION COMPONENT
@@ -489,37 +524,3 @@ html, body {
 	NAVIGATION COMPONENT
   =-=-=-=
 */
-/*
-  =-=-=-=
-	NAVIGATION COMPONENT
-  =-=-=-=
-*/
-/*
-  =-=-=-=
-	NAVIGATION COMPONENT
-  =-=-=-=
-*/
-#search-hotel-form {
-  .form-group: last-child;
-  .form-group-margin-bottom: 0;
-}
-#search-hotel-form.well-yellow {
-  background-color: yellow;
-  border-color: yellow;
-  border-radius: 20px;
-}
-
-.hotel-star-list {
-  li: last-chile;
-  li-margin-bottom: 0;
-}
-.hotel-star-list {
-  list-style: none;
-}
-.hotel-star-list li {
-  margin-bottom: 0.5em;
-}
-.hotel-star-list .star-list {
-  color: #c9b467;
-  float: right;
-}

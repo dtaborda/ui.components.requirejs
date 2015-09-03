@@ -30,8 +30,10 @@ define('nav-menu.component',['angular'],
 
 								function init(){
 									ctrl.items = [
-										{ title: 'Hoteles', icon: 'flaticon-dwelling1', state:'hotels'  },
-										{ title: 'About', icon: 'flaticon-menu45', state:'about'  }
+										{ title: 'PREMIOS', icon: '', state:'award'  },
+										{ title: 'BASES Y CONDICIONES', icon: '', state:'termsConditions'  },										
+										{ title: 'PREGUNTAS FRECUENTES', icon: '', state:'frequentQuestions'  },
+										{ title: 'GANADORES', icon: '', state:'winners'  }
 									];
 								}
 

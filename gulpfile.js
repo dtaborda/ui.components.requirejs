@@ -210,7 +210,7 @@ gulp.task('dev',function(){
 });
 
 gulp.task('default', function(){
-	gulp.start('browser-sync-build');
+	gulp.start('dev-build');
 });
 
 // proxy tasks
